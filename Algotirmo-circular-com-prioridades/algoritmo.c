@@ -2,9 +2,6 @@
 
 /*
 Variáveis necessárias:
-espera
-cpu(executando)
-pronto
 processos(1, 2, 3, 4, 5){
  devem ter:
   tamanho
