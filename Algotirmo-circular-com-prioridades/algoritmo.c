@@ -31,18 +31,36 @@ void imprimeDados(P processo)
  }
 }
 
+/*int maiorTam(int tam1, int tam2)
+{
+  if(tam1 > tam2){
+   return tam1;
+  } else {
+   return tam2;
+  }
+}*/
+
 int main()
 {
  P p1 = {13, 3, 1};
- while(p1.tamanho >= 0)
+ P p2 = {20, 2, 1};
+ int maior = p1.tamanho + p2.tamanho;
+ while(maior >= 0)
  {
-  imprimeDados(p1);
-  p1.tamanho = p1.tamanho - p1.prioridade;
+   if(p1.tamanho > 0){
+   imprimeDados(p1);
+   p1.tamanho = p1.tamanho - p1.prioridade;
+   maior = maior - p1.prioridade;
+  }
+  imprimeDados(p2);
+  p2.tamanho = p2.tamanho - p2.prioridade;
+  maior = maior - p2.prioridade;
  }
  if(p1.tamanho < 0)
   {
   p1.tamanho = 0;
   }
- printf("%i", p1.tamanho);
+ printf("%i\n", p1.tamanho);
+ printf("%i\n", p2.tamanho);
  return 0;
 }
