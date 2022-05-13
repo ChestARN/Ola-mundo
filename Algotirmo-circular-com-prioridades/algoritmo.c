@@ -31,15 +31,6 @@ void imprimeDados(P processo)
  }
 }
 
-/*int maiorTam(int tam1, int tam2)
-{
-  if(tam1 > tam2){
-   return tam1;
-  } else {
-   return tam2;
-  }
-}*/
-
 int main()
 {
  P p1 = {13, 3, 1};
