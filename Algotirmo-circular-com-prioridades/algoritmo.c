@@ -13,7 +13,6 @@ typedef struct processo
 {
  int tamanho;
  int prioridade;
- int posicaoNaFila;
 }P;
 
 void imprimeDados(P processo)
@@ -33,8 +32,9 @@ void imprimeDados(P processo)
 
 int main()
 {
- P p1 = {13, 3, 1};
- P p2 = {20, 2, 1};
+ P p1 = {13, 3};
+ P p2 = {20, 2};
+ 
  int maior = p1.tamanho + p2.tamanho;
  while(maior >= 0)
  {
