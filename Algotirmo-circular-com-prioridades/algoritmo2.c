@@ -8,12 +8,15 @@ typedef struct processo
     int tempoDeExecucao;
 }P;
 
-P criaProcesso(){
-    P proccess;
-    scanf("Insira o tamanho do algoritmo: %i/n", &proccess.tamanho);
-    scanf("Insira a prioridade do algoritmo: %i/n", &proccess.prioridade);
-    scanf("Insira o tempo de execução necessário para o algoritmo: %i/n/n/n/n", &proccess.tempoDeExecucao);
-    return proccess;
+void criaProcesso(){
+    printf("Teste\n");
+    int tamanho;
+    printf("Insira o tamanho do algoritmo: ");
+    scanf("%i", &tamanho);
+    printf("\n");
+   // scanf("Insira a prioridade do algoritmo: %i\n", &proccess.prioridade);
+   // scanf("Insira o tempo de execução necessário para o algoritmo: %i\n\n\n\n", &proccess.tempoDeExecucao);
+//    return proccess;
 };
 
 
@@ -29,7 +32,7 @@ int main(){
     //int i = 0;
     //for (i = 0; i > j; i++)
     //{
-        Vprocessos[0] = criaProcesso();
+       criaProcesso();
     //}
     
     printf("Simulação Finalizada!!!");
