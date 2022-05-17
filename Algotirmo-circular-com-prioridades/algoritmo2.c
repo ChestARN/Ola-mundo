@@ -57,7 +57,7 @@ struct processos *init_processos (int id, int surto, int prioridade) {
     return(proc);
 };
 
-/* Escalonamento o primeiro que chega 
+/* Escalonamento o primeiro que chega */
 /* é o primeiro a sair, ou seja, será executado primeiro */
 void fcfs (struct processos *proc) {
     int tempo = 0, inicio, fim;
