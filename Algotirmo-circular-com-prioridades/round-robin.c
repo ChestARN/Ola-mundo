@@ -40,7 +40,6 @@ void imprimeTabela () {
             }
         }
     }
-    getch();
 }
 
 int main () {
