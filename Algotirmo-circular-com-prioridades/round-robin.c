@@ -25,20 +25,22 @@ void imprimeTabela () {
     printf("Não executando no quantum: --\n\n");
     printf("Tempo    P1    P2\n");
     for(int i = 0; i < tempo[2]; i++){
-        if(tempo[0] > 0){
             for(int j = processos[0]; j > 0; j--){
-                printf("%d - %d    ##    --\n", i, i + 1);
-                i++;
-                tempo[0]--;
+                if(tempo[0] > 0){
+                    printf("%d - %d    ##    --\n", i, i + 1);
+                    i++;
+                    tempo[0]--;
+                }
             }
-        }
-        if(tempo[1] > 0){
             for(int j = processos[1]; j > 0; j--){
-                printf("%d - %d    --    ##\n", i, i + 1);
-                i++;
-                tempo[1]--;
+                if(tempo[1] > 0){
+                    printf("%d - %d    --    ##\n", i, i + 1);
+                    i++;
+                    tempo[1]--;
+                } else {
+                    i--;
+                }
             }
-        }
     }
 }
 
