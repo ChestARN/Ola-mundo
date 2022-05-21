@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int processos[2];
 int tempo[3];
 
 void preencheProcessos(){
+    setlocale{LC_ALL, "Portuguese"}
     printf("Defina o quantum de cada processo: \n");
     printf("P1: ");
     scanf("%d", &processos[0]);
