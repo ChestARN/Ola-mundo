@@ -18,7 +18,7 @@ void preencheProcessos(){
     scanf("%d", &tempo[0]);
     printf("\nP2: ");
     scanf("%d", &tempo[1]);
-    printf("\n\n\n\n");
+    printf("\t");
 }
 
 void imprimeTabela () {
