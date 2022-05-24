@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
 
-int processos[2], tempo[3], prioridade[2], duracao[10], tempoEspera[10];
+int processos[2], tempo[3], prioridade[2];
 
 void preencheProcessos();
 void imprimeTabela();
