@@ -82,7 +82,7 @@ void imprimeTabela(){
 	                    
 	                } else {
 	                	
-	                    i--;
+	                    i++;
 	                }
 	            }
 	    }

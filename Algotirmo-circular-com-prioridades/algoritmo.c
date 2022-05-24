@@ -1,58 +1,69 @@
 #include<stdio.h>
-
-/*
-Variáveis necessárias:
-processos(1, 2, 3, 4, 5){
- devem ter:
-  tamanho
-  prioridade
-  posição na fila
-}
-*/
-typedef struct processo
-{
- int tamanho;
- int prioridade;
- int tempoDeExecucao;
-}P;
-
-void imprimeDados(P processo)
-{
- printf("Tempo necessário de Processo: %i\n", processo.tamanho);
- printf("Prioridade do Processo: %i\n", processo.prioridade);
- if(processo.tamanho < processo.prioridade)
-  {
-    processo.prioridade = processo.tamanho;
-  }
- while (processo.prioridade >= 1)
- {
-   printf("Tempo de execução: %i\n", processo.prioridade);
-   processo.prioridade--;
- }
-}
-
+ 
 int main()
 {
- P p1 = {13, 3, 40};
- P p2 = {20, 2, 50};
+      int i, limit, total = 0, x, counter = 0, time_quantum;
+      int wait_time = 0, turnaround_time = 0, arrival_time[10], burst_time[10], temp[10];
+      float average_wait_time, average_turnaround_time;
+      printf("nEnter Total Number of Processes:t");
+      scanf("%d", &limit);
+      x = limit;
+      for(i = 0; i < limit; i++)
+      {
+            printf("nEnter Details of Process[%d]n", i + 1);
  
- int maior = p1.tamanho + p2.tamanho;
- while(maior >= 0)
- {
-   if(p1.tamanho > 0){
-   imprimeDados(p1);
-   p1.tamanho = p1.tamanho - p1.prioridade;
-   maior = maior - p1.prioridade;
-  }
-  imprimeDados(p2);
-  p2.tamanho = p2.tamanho - p2.prioridade;
-  maior = maior - p2.prioridade;
- }
- if(p1.tamanho < 0)
-  {
-  p1.tamanho = 0;
-  }
- printf("%i\n", p1.tamanho);
- printf("%i\n", p2.tamanho);
- return 0;
+            printf("Arrival Time:t");
+ 
+            scanf("%d", &arrival_time[i]);
+ 
+            printf("Burst Time:t");
+ 
+            scanf("%d", &burst_time[i]);
+ 
+            temp[i] = burst_time[i];
+      }
+ 
+      printf("nEnter Time Quantum:t");
+      scanf("%d", &time_quantum);
+      printf("nProcess IDttBurst Timet Turnaround Timet Waiting Timen");
+      for(total = 0, i = 0; x != 0;)
+      {
+            if(temp[i] <= time_quantum && temp[i] > 0)
+            {
+                  total = total + temp[i];
+                  temp[i] = 0;
+                  counter = 1;
+            }
+            else if(temp[i] > 0)
+            {
+                  temp[i] = temp[i] - time_quantum;
+                  total = total + time_quantum;
+            }
+            if(temp[i] == 0 && counter == 1)
+            {
+                  x--;
+                  printf("nProcess[%d]tt%dtt %dttt %d", i + 1, burst_time[i], total - arrival_time[i], total - arrival_time[i] - burst_time[i]);
+                  wait_time = wait_time + total - arrival_time[i] - burst_time[i];
+                  turnaround_time = turnaround_time + total - arrival_time[i];
+                  counter = 0;
+            }
+            if(i == limit - 1)
+            {
+                  i = 0;
+            }
+            else if(arrival_time[i + 1] <= total)
+            {
+                  i++;
+            }
+            else
+            {
+                  i = 0;
+            }
+      }
+ 
+      average_wait_time = wait_time * 1.0 / limit;
+      average_turnaround_time = turnaround_time * 1.0 / limit;
+      printf("nnAverage Waiting Time:t%f", average_wait_time);
+      printf("nAvg Turnaround Time:t%fn", average_turnaround_time);
+      return 0;
 }
