@@ -10,7 +10,7 @@ int main()
       x = limit;
       for(i = 0; i < limit; i++)
       {
-                printf("\nDefina os detalhes dos processos[%d]\n", i + 1);
+            printf("\nDefina os detalhes dos processos[%d]\n", i + 1);
  
             printf("Tempo de chegada:\t");
  
