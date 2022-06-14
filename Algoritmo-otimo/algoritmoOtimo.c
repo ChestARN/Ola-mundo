@@ -1,6 +1,7 @@
 #include<stdio.h>
-int main()
-{
+
+
+int main() {
     int numero_frames, numero_paginas, frames[10], paginas[30], temp[10], aux1, aux2, aux3, i, j, k, pos, max, falhas = 0;
     printf("Insira o numero de frames: ");
     scanf("%d", &numero_frames);
@@ -8,7 +9,7 @@ int main()
     printf("\nInsira o numero de paginas: ");
     scanf("%d", &numero_paginas);
     
-    printf("\nInsira o valor da memória para cada página: \n");
+    printf("\nInsira o valor da memória para cada página: \n"); 
     
     for(i = 0; i < numero_paginas; ++i){
         scanf("%d", &paginas[i]);
@@ -46,19 +47,19 @@ int main()
              temp[j] = -1;
             
              for(k = i + 1; k < numero_paginas; ++k){
-             if(frames[j] == paginas[k]){
-             temp[j] = k;
-             break;
-             }
+                if(frames[j] == paginas[k]){
+                    temp[j] = k;
+                    break;
+                }
              }
             }
             
             for(j = 0; j < numero_frames; ++j){
-             if(temp[j] == -1){
-             pos = j;
-             aux3 = 1;
-             break;
-             }
+                if(temp[j] == -1){
+                    pos = j;
+                    aux3 = 1;
+                    break;
+                }
             }
             
             if(aux3 ==0){
@@ -66,11 +67,11 @@ int main()
              pos = 0;
             
              for(j = 1; j < numero_frames; ++j){
-             if(temp[j] > max){
-             max = temp[j];
-             pos = j;
-             }
-             }            
+                if(temp[j] > max){
+                    max = temp[j];
+                    pos = j;
+                    }
+                }            
             }
         frames[pos] = paginas[i];
         falhas++;
@@ -81,8 +82,7 @@ int main()
         for(j = 0; j < numero_frames; ++j){
             printf("%d\t", frames[j]);
         }
-    }
-    
+    } 
     printf("\n\nTotal de falhas = %d", falhas);
     
     return 0;
